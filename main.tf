@@ -28,5 +28,12 @@ output "user_arn" {
   value = aws_iam_user.user.arn
 }
 
-variable "bucket_name" {}
-variable "user_name" {}
+variable "bucket_name" {
+  description = "The name of the S3 bucket"
+  type        = string
+}
+
+variable "user_name" {
+  description = "The name of the user requesting access"
+  type        = string
+}
