@@ -34,6 +34,6 @@ jobs:
 
 
       - name: Terraform Apply
-        run: terraform apply -var bucketName=${{ github.event.inputs.bucketName }} -var username=${{ github.event.inputs.username }} -auto-approve
+        run: terraform apply -var bucket_name=${{ github.event.inputs.bucketName }} -var user_name=${{ github.event.inputs.username }} -auto-approve
         working-directory: .
 
