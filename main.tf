@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_iam_user" "user" {
-  name = "access-user-${var.user_email}"
+  name = "access-user-${var.user_name}"
 }
 
 resource "aws_iam_user_policy" "user_policy" {
-  name   = "S3AccessPolicy-${var.user_email}"
+  name   = "S3AccessPolicy-${var.user_name}"
   user   = aws_iam_user.user.name
   policy = jsonencode({
     Version = "2012-10-17"
@@ -29,4 +29,4 @@ output "user_arn" {
 }
 
 variable "bucket_name" {}
-variable "user_email" {}
+variable "user_name" {}
